@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>AlitaPédia - Arcos</title>
+
+     <link rel="icon" href="ChatGPT Image 1 de mai. de 2026, 17_11_15.png">
+
+</head>
+
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0f172a;
+    color: white;
+  }
+
+   header {
+      background: #020617;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+    }
+
+    header {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+}
+
+
+     nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+      transition: 0.3s;
+      font-weight: bold;
+    }
+
+      nav a:hover {
+      color: cyan;
+      text-shadow: 0 0 5px cyan;
+    }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    padding: 50px;
+    max-width: 1100px;
+    margin: auto;
+  }
+
+
+  .card {
+    display: block;
+    background: #111827;
+    padding: 22px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: white;
+
+    position: relative;
+    overflow: hidden;
+
+    border: 1px solid rgba(255,255,255,0.08);
+    transition: 0.25s ease;
+    z-index: 0;
+  }
+
+  .card::after {
+    content: "";
+    position: absolute;
+    inset: -4px;
+    border-radius: 14px;
+    background: radial-gradient(
+      circle at 50% 50%,
+      rgba(0, 255, 255, 0.22),
+      transparent 70%
+    );
+    filter: blur(14px);
+    opacity: 0;
+    transition: 0.3s ease;
+    z-index: -1;
+  }
+
+  .card::before {
+      content: "";
+      position: absolute;
+      top: -100%;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(0, 255, 255, 0.3),
+        transparent
+      );
+      transition: 0.5s;
+    }
+
+  .card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(0, 255, 255, 0.25);
+  }
+
+  .card:hover::after {
+    opacity: 1;
+  }
+
+  .card:hover::before {
+    top: 120%;
+  }
+
+  .card h3 {
+    margin: 0 0 8px 0;
+    font-size: 1.1rem;
+  }
+
+  .card p {
+    margin: 0;
+    opacity: 0.75;
+    font-size: 0.9rem;
+  }
+
+  .voltar {
+      display: block;
+      text-align: center;
+      margin-top: 40px;
+      text-decoration: none;
+      color: white;
+      text-shadow:cyan;
+      padding: 10px;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+
+    .voltar:hover {
+      color: cyan ;
+    }
+
+  footer {
+    text-align: center;
+    padding: 25px;
+    background: #020617;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    margin-top: 40px;
+    opacity: 0.8;
+  }
+</style>
+
+<body>
+
+<header>
+  <h2>AlitaPédia -
+    Arcos
+  </h2>
+  <nav>
+    <a href="AlitaPedia.html">Home</a>
+    <a href="quemsomos.html">Sobre</a>
+    <a href="contato.html">Contato</a>
+  </nav>
+</header>
+
+    <section class="cards">
+
+  <a href="valaus.html" class="card">
+    <h3>Arco de Valaus</h3>
+    <p>O Colégio.</p>
+  </a>
+
+  <a href="lupercia.html" class="card">
+    <h3>Arco de Lupércia</h3>
+    <p>Conferenza Turbo.</p>
+  </a>
+
+  <a href="hoyryurbo.html" class="card">
+    <h3>Arco de Hoyry Urbo</h3>
+    <p>Horas Oxidadas.</p>
+  </a>
+
+  <a href="galadria.html" class="card">
+    <h3>Arco de Galadria</h3>
+    <p>Kristallschwarmland.</p>
+  </a>
+
+  <a href="thallassys.html" class="card">
+    <h3>Arco de Thallasys</h3>
+    <p>Hae Messis Maris.</p>
+  </a>
+
+<a href="ex.html" class="card">
+    <h3>Arco do Colégio Alita Chávez</h3>
+    <p>Queda dos Jardins Suspensos.</p>
+  </a>
+
+  <a href="ex.html" class="card">
+    <h3>Arco de Riotadonoá</h3>
+    <p>Poraí Oporuka.</p>
+  </a>
+
+<a href="ex.html" class="card">
+    <h3>Arco de Xing Yu</h3>
+    <p>Augustus Life Yield Corporation (ALYC).</p>
+  </a>
+
+  <a href="ex.html" class="card">
+    <h3>Arco de Frostvaal</h3>
+    <p>Sinfonia de Cinzas.</p>
+  </a>
+
+<a href="ex.html" class="card">
+    <h3>Arco de Waset</h3>
+    <p>The Garden of Earthly Delights.</p>
+  </a>
+
+  <a href="ex.html" class="card">
+    <h3>Arco de Tirnasióg</h3>
+    <p>Eas Bláthanna.</p>
+  </a>
+
+
+  <a href="ex.html" class="card">
+    <h3>Arco de Luminar</h3>
+    <p>Basílica Iliusminista.</p>
+  </a>
+
+<a href="ex.html" class="card">
+    <h3>Arco de Ru</h3>
+    <p>Abstrações.</p>
+  </a>
+
+  <a href="ex.html" class="card">
+    <h3>Arco de Bullkot</h3>
+    <p>A Justiça é Cega.</p>
+  </a>
+
+  <a href="ex.html" class="card">
+    <h3>Arco de Mucurutu</h3>
+    <p>Ryokuna deitando 2 hinto no murro.</p>
+  </a>
+
+  <a href="ex.html" class="card">
+    <h3>Arco de Rokstyr</h3>
+    <p>Censura.</p>
+  </a>
+
+  <a href="ex.html" class="card">
+    <h3>Arco de Avalon</h3>
+    <p>A Nobre Nobreza dos Cubdell.</p>
+  </a>
+
+  <a href="ex.html" class="card">
+    <h3>Arco de Bergreesten</h3>
+    <p>O Continente de Uchuoka.</p>
+  </a>
+
+  <a href="ex.html" class="card">
+    <h3>Arco de Sunaralém</h3>
+    <p>Confraternização em Hengenoti.</p>
+  </a>
+
+  <a href="ex.html" class="card">
+    <h3>Arco de Hymnijae</h3>
+    <p>O Sínodo Eterno.</p>
+  </a>
+
+  <a href="ex.html" class="card">
+    <h3>Arco de Asahioka</h3>
+    <p>Os Hintos.</p>
+  </a>
+
+
+</section>
+
+ <a href="AlitaPedia.html" class="voltar">⬅ Voltar</a>
+
+<footer>
+  <p>© 2019 - Alita Chávez</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elementais</title>
+
+  <style>
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: white;
+
+      background:
+      radial-gradient(circle at top,
+      #0f766e,
+      #020617 75%);
+    }
+
+    /* HEADER */
+
+    header {
+      background: rgba(2,6,23,0.95);
+
+      padding: 20px;
+
+      text-align: center;
+
+      border-bottom:
+      2px solid #14b8a6;
+
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+
+      backdrop-filter: blur(10px);
+    }
+
+    header h1 {
+
+      margin: 0;
+
+      color: #99f6e4;
+
+      letter-spacing: 3px;
+
+      text-shadow:
+      0 0 10px #14b8a6,
+      0 0 30px #0f766e;
+    }
+
+    /* HERO */
+
+    .hero {
+
+      text-align: center;
+
+      padding: 120px 20px;
+
+      background:
+      linear-gradient(
+      rgba(0,0,0,0.65),
+      rgba(0,0,0,0.9)),
+      radial-gradient(circle at center,
+      #14b8a6,
+      #0f766e,
+      #020617);
+
+      position: relative;
+
+      overflow: hidden;
+    }
+
+    /* PARTÍCULAS */
+
+    .hero::before {
+
+      content: "";
+
+      position: absolute;
+
+      width: 200%;
+      height: 200%;
+
+      background:
+      radial-gradient(white 1px, transparent 1px);
+
+      background-size: 45px 45px;
+
+      opacity: 0.08;
+
+      animation: flutuar 35s linear infinite;
+    }
+
+    @keyframes flutuar {
+
+      from {
+        transform: translateY(0);
+      }
+
+      to {
+        transform: translateY(200px);
+      }
+
+    }
+
+    .hero h2 {
+
+      position: relative;
+
+      font-size: 4em;
+
+      margin-bottom: 10px;
+
+      color: #ccfbf1;
+
+      text-shadow:
+      0 0 20px #14b8a6,
+      0 0 50px #0f766e;
+    }
+
+    .hero p {
+
+      position: relative;
+
+      font-size: 1.2em;
+
+      opacity: 0.8;
+    }
+
+    /* CONTAINER */
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 50px;
+    }
+
+    /* CARD */
+
+    .clan {
+
+      background:
+      rgba(255,255,255,0.05);
+
+      border:
+      1px solid rgba(20,184,166,0.25);
+
+      border-radius: 18px;
+
+      margin-bottom: 25px;
+
+      overflow: hidden;
+
+      cursor: pointer;
+
+      transition: 0.4s;
+
+      backdrop-filter: blur(10px);
+
+      box-shadow:
+      0 0 15px rgba(20,184,166,0.08);
+    }
+
+    .clan:hover {
+
+      transform:
+      scale(1.02)
+      translateY(-5px);
+
+      border-color: #14b8a6;
+
+      box-shadow:
+      0 0 20px rgba(20,184,166,0.3),
+      0 0 50px rgba(15,118,110,0.25);
+    }
+
+    /* TOPO */
+
+    .clan-topo {
+      padding: 25px;
+    }
+
+    .clan-topo h3 {
+
+      margin: 0;
+
+      color: #99f6e4;
+
+      font-size: 2em;
+
+      text-shadow:
+      0 0 10px rgba(20,184,166,0.4);
+    }
+
+    .clan-topo p {
+
+      margin-top: 8px;
+
+      opacity: 0.75;
+    }
+
+    /* CONTEÚDO */
+
+    .clan-conteudo {
+
+      max-height: 0;
+
+      overflow: hidden;
+
+      transition:
+      max-height 0.5s ease;
+
+      background:
+      rgba(0,0,0,0.3);
+    }
+
+    .clan-conteudo p {
+
+      padding: 25px;
+
+      margin: 0;
+
+      line-height: 1.8;
+
+      opacity: 0.9;
+    }
+
+    /* ABRIR */
+
+    .clan.ativo .clan-conteudo {
+      max-height: 400px;
+    }
+
+    /* BOTÃO */
+
+    .voltar {
+
+      display: inline-block;
+
+      margin-top: 30px;
+
+      text-decoration: none;
+
+      color: white;
+
+      border:
+      2px solid #14b8a6;
+
+      padding: 12px 20px;
+
+      border-radius: 10px;
+
+      transition: 0.3s;
+    }
+
+    .voltar:hover {
+
+      background: #14b8a6;
+
+      color: black;
+
+      box-shadow:
+      0 0 20px #14b8a6;
+
+      transform: scale(1.05);
+    }
+
+    /* FOOTER */
+
+    footer {
+
+      text-align: center;
+
+      padding: 25px;
+
+      background: #020617;
+
+      margin-top: 50px;
+
+      border-top:
+      1px solid rgba(20,184,166,0.2);
+
+      opacity: 0.8;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>AlitaPédia</h1>
+</header>
+
+<section class="hero">
+
+  <h2>Elementais</h2>
+
+  <p>
+    Clãs conectados às forças primordiais da natureza.
+  </p>
+
+</section>
+
+<section class="container">
+
+  <div class="clan" onclick="abrirClan(this)">
+    <div class="clan-topo">
+      <h3>Shigure</h3>
+      <p>Clima e fenômenos atmosféricos</p>
+    </div>
+
+    <div class="clan-conteudo">
+      <p>
+        Os Shigure manipulam tempestades, chuvas,
+        trovões e fenômenos climáticos extremos.
+      </p>
+    </div>
+  </div>
+
+  <div class="clan" onclick="abrirClan(this)">
+    <div class="clan-topo">
+      <h3>Ferénc</h3>
+      <p>Vidro</p>
+    </div>
+
+    <div class="clan-conteudo">
+      <p>
+        Os Ferénc moldam, endurecem e fragmentam vidro,
+        criando estruturas cortantes e transparentes.
+      </p>
+    </div>
+  </div>
+
+  <div class="clan" onclick="abrirClan(this)">
+    <div class="clan-topo">
+      <h3>Capasov</h3>
+      <p>Líquidos</p>
+    </div>
+
+    <div class="clan-conteudo">
+      <p>
+        Os Capasov controlam líquidos diversos,
+        alterando fluxo, pressão e densidade.
+      </p>
+    </div>
+  </div>
+
+  <div class="clan" onclick="abrirClan(this)">
+    <div class="clan-topo">
+      <h3>Galeedge</h3>
+      <p>Ventos e correntes de ar</p>
+    </div>
+
+    <div class="clan-conteudo">
+      <p>
+        Os Galeedge dominam ventos violentos,
+        correntes aéreas e deslocamento atmosférico.
+      </p>
+    </div>
+  </div>
+
+  <div class="clan" onclick="abrirClan(this)">
+    <div class="clan-topo">
+      <h3>Snaer</h3>
+      <p>Gelo e neve</p>
+    </div>
+
+    <div class="clan-conteudo">
+      <p>
+        Os Snaer congelam ambientes inteiros,
+        manipulando neve, geada e temperaturas extremas.
+      </p>
+    </div>
+  </div>
+
+  <div class="clan" onclick="abrirClan(this)">
+    <div class="clan-topo">
+      <h3>Nerida</h3>
+      <p>Estados da matéria</p>
+    </div>
+
+    <div class="clan-conteudo">
+      <p>
+        Os Nerida alteram matéria entre estados sólido,
+        líquido, gasoso e plasmático.
+      </p>
+    </div>
+  </div>
+
+  <div class="clan" onclick="abrirClan(this)">
+    <div class="clan-topo">
+      <h3>Mokjin</h3>
+      <p>Madeira e ferro</p>
+    </div>
+
+    <div class="clan-conteudo">
+      <p>
+        Os Mokjin unem resistência metálica
+        e crescimento orgânico em combate.
+      </p>
+    </div>
+  </div>
+
+  <div class="clan" onclick="abrirClan(this)">
+    <div class="clan-topo">
+      <h3>Ignatius</h3>
+      <p>Chamas</p>
+    </div>
+
+    <div class="clan-conteudo">
+      <p>
+        Os Ignatius produzem e manipulam fogo,
+        explosões térmicas e calor intenso.
+      </p>
+    </div>
+  </div>
+
+  <div class="clan" onclick="abrirClan(this)">
+    <div class="clan-topo">
+      <h3>Guster</h3>
+      <p>Pressão atmosférica</p>
+    </div>
+
+    <div class="clan-conteudo">
+      <p>
+        Os Guster controlam pressão do ar,
+        esmagando ou repelindo tudo ao redor.
+      </p>
+    </div>
+  </div>
+
+  <div class="clan" onclick="abrirClan(this)">
+    <div class="clan-topo">
+      <h3>Al-Thani</h3>
+      <p>Poeira e areia</p>
+    </div>
+
+    <div class="clan-conteudo">
+      <p>
+        Os Al-Thani manipulam areia, desertos
+        e tempestades abrasivas.
+      </p>
+    </div>
+  </div>
+
+  <div class="clan" onclick="abrirClan(this)">
+    <div class="clan-topo">
+      <h3>Kristallnacht</h3>
+      <p>Cristais</p>
+    </div>
+
+    <div class="clan-conteudo">
+      <p>
+        Os Kristallnacht criam cristais extremamente resistentes
+        e energeticamente instáveis.
+      </p>
+    </div>
+  </div>
+
+  <div class="clan" onclick="abrirClan(this)">
+    <div class="clan-topo">
+      <h3>Qatir</h3>
+      <p>Ácido</p>
+    </div>
+
+    <div class="clan-conteudo">
+      <p>
+        Os Qatir manipulam substâncias corrosivas
+        capazes de dissolver quase qualquer material.
+      </p>
+    </div>
+  </div>
+
+  <div class="clan" onclick="abrirClan(this)">
+    <div class="clan-topo">
+      <h3>Luminare</h3>
+      <p>Luz</p>
+    </div>
+
+    <div class="clan-conteudo">
+      <p>
+        Os Luminare manipulam brilho, lasers
+        e energia luminosa condensada.
+      </p>
+    </div>
+  </div>
+
+  <div class="clan" onclick="abrirClan(this)">
+    <div class="clan-topo">
+      <h3>Umbra</h3>
+      <p>Escuridão sólida</p>
+    </div>
+
+    <div class="clan-conteudo">
+      <p>
+        Os Umbra materializam sombras físicas
+        capazes de consumir luz e matéria.
+      </p>
+    </div>
+  </div>
+
+  <div class="clan" onclick="abrirClan(this)">
+    <div class="clan-topo">
+      <h3>Vargas</h3>
+      <p>Vapor</p>
+    </div>
+
+    <div class="clan-conteudo">
+      <p>
+        Os Vargas manipulam vapor quente,
+        névoa densa e condensação atmosférica.
+      </p>
+    </div>
+  </div>
+
+  <a href="clas.html" class="voltar">
+    ⬅ Voltar
+  </a>
+
+</section>
+
+<footer>
+  <p>© AlitaPédia — Elementais</p>
+</footer>
+
+<script>
+
+  function abrirClan(elemento) {
+    elemento.classList.toggle("ativo");
+  }
+
+</script>
+
+</body>
+</html>

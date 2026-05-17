@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Honrados por Hintos</title>
+
+  <style>
+
+    /* BODY */
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background:
+      radial-gradient(circle at top, #1e1b4b, #020617 70%);
+      color: white;
+    }
+
+    /* HEADER */
+
+    header {
+      background: rgba(2,6,23,0.95);
+      padding: 20px;
+      text-align: center;
+      border-bottom: 2px solid #7c3aed;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+    }
+
+    header h1 {
+      margin: 0;
+      color: #c084fc;
+      letter-spacing: 3px;
+
+      text-shadow:
+      0 0 10px #a855f7,
+      0 0 25px #7c3aed;
+    }
+
+    /* HERO */
+
+    .hero {
+      text-align: center;
+      padding: 120px 20px;
+
+      background:
+      linear-gradient(
+      rgba(0,0,0,0.6),
+      rgba(0,0,0,0.85)),
+      radial-gradient(circle at center,
+      #7c3aed,
+      #312e81,
+      #020617);
+
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* ESTRELAS */
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 200%;
+      height: 200%;
+
+      background:
+      radial-gradient(white 1px, transparent 1px);
+
+      background-size: 50px 50px;
+
+      opacity: 0.15;
+
+      animation: estrelas 40s linear infinite;
+    }
+
+    @keyframes estrelas {
+
+      from {
+        transform: translateY(0);
+      }
+
+      to {
+        transform: translateY(200px);
+      }
+
+    }
+
+    .hero h2 {
+      position: relative;
+      font-size: 4em;
+      margin-bottom: 10px;
+
+      color: #e9d5ff;
+
+      text-shadow:
+      0 0 15px #a855f7,
+      0 0 40px #7c3aed;
+    }
+
+    .hero p {
+      position: relative;
+      font-size: 1.2em;
+      opacity: 0.8;
+    }
+
+    /* CONTAINER */
+
+    .container {
+      padding: 50px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    /* CLÃ */
+
+    .clan {
+      background:
+      rgba(255,255,255,0.05);
+
+      border:
+      1px solid rgba(168,85,247,0.3);
+
+      margin-bottom: 25px;
+
+      border-radius: 16px;
+
+      overflow: hidden;
+
+      transition: 0.4s;
+
+      cursor: pointer;
+
+      backdrop-filter: blur(8px);
+
+      box-shadow:
+      0 0 15px rgba(124,58,237,0.1);
+    }
+
+    .clan:hover {
+
+      transform:
+      scale(1.02)
+      translateY(-5px);
+
+      box-shadow:
+      0 0 20px rgba(168,85,247,0.3),
+      0 0 50px rgba(124,58,237,0.2);
+
+      border-color: #a855f7;
+    }
+
+    /* TOPO */
+
+    .clan-topo {
+      padding: 25px;
+    }
+
+    .clan-topo h3 {
+      margin: 0;
+      color: #d8b4fe;
+      font-size: 2em;
+
+      text-shadow:
+      0 0 10px rgba(168,85,247,0.5);
+    }
+
+    .clan-topo p {
+      margin-top: 8px;
+      opacity: 0.7;
+    }
+
+    /* CONTEÚDO */
+
+    .clan-conteudo {
+      max-height: 0;
+      overflow: hidden;
+
+      transition:
+      max-height 0.5s ease;
+
+      background:
+      rgba(0,0,0,0.25);
+    }
+
+    .clan-conteudo p {
+      padding: 25px;
+      margin: 0;
+      line-height: 1.8;
+      opacity: 0.9;
+    }
+
+    /* ABRIR */
+
+    .clan.ativo .clan-conteudo {
+      max-height: 300px;
+    }
+
+    /* BOTÃO */
+
+    .voltar {
+      display: inline-block;
+      margin-top: 30px;
+
+      text-decoration: none;
+      color: white;
+
+      border: 2px solid #7c3aed;
+
+      padding: 12px 20px;
+
+      border-radius: 10px;
+
+      transition: 0.3s;
+    }
+
+    .voltar:hover {
+
+      background: #7c3aed;
+
+      box-shadow:
+      0 0 20px #7c3aed;
+
+      transform: scale(1.05);
+    }
+
+    /* FOOTER */
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: #020617;
+      margin-top: 50px;
+
+      border-top:
+      1px solid rgba(168,85,247,0.2);
+
+      opacity: 0.8;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>AlitaPédia</h1>
+</header>
+
+<section class="hero">
+
+  <h2>Honrados por Hintos</h2>
+
+  <p>
+    Os cinco clãs escolhidos pelas entidades supremas.
+  </p>
+
+</section>
+
+<section class="container">
+
+  <!-- SKITO -->
+
+  <div class="clan" onclick="abrirClan(this)">
+
+    <div class="clan-topo">
+      <h3>Skito</h3>
+      <p>Manipulação do Tempo</p>
+    </div>
+
+    <div class="clan-conteudo">
+      <p>
+        Os Skito possuem domínio absoluto sobre o fluxo temporal.
+        Conseguem acelerar, desacelerar, congelar e até fragmentar o tempo.
+        São considerados os observadores eternos da existência.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- PRADO -->
+
+  <div class="clan" onclick="abrirClan(this)">
+
+    <div class="clan-topo">
+      <h3>Prado</h3>
+      <p>Manipulação da Realidade</p>
+    </div>
+
+    <div class="clan-conteudo">
+      <p>
+        Os Prado alteram as regras do mundo ao seu redor.
+        Sua percepção redefine o real, distorcendo matéria,
+        espaço e lógica conforme sua vontade.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- MANVATARA -->
+
+  <div class="clan" onclick="abrirClan(this)">
+
+    <div class="clan-topo">
+      <h3>Manvatara</h3>
+      <p>Manipulação da Existência</p>
+    </div>
+
+    <div class="clan-conteudo">
+      <p>
+        Os Manvatara governam os conceitos de presença e ausência.
+        Podem conceder existência a algo inexistente ou apagar
+        completamente seres e conceitos do universo.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- NIDAMA -->
+
+  <div class="clan" onclick="abrirClan(this)">
+
+    <div class="clan-topo">
+      <h3>Nidama</h3>
+      <p>Manipulação do Vigor</p>
+    </div>
+
+    <div class="clan-conteudo">
+      <p>
+        Os Nidama representam a força vital absoluta.
+        Conseguem amplificar capacidades físicas e espirituais,
+        tornando-se entidades praticamente imparáveis.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- HOSHOKAGE -->
+
+  <div class="clan" onclick="abrirClan(this)">
+
+    <div class="clan-topo">
+      <h3>Hoshokage</h3>
+      <p>Manipulação do Nulo</p>
+    </div>
+
+    <div class="clan-conteudo">
+      <p>
+        Os Hoshokage controlam o vazio primordial.
+        Tudo o que tocam pode ser reduzido ao absoluto nada,
+        como se jamais tivesse existido.
+      </p>
+    </div>
+
+  </div>
+
+  <a href="clas.html" class="voltar">
+    ⬅ Voltar
+  </a>
+
+</section>
+
+<footer>
+  <p>© AlitaPédia — Honrados por Hintos</p>
+</footer>
+
+<script>
+
+  function abrirClan(elemento) {
+    elemento.classList.toggle("ativo");
+  }
+
+</script>
+
+</body>
+</html>

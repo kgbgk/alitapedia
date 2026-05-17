@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AlitaPédia - Home</title>
+
+  <link rel="icon" href="ChatGPT Image 1 de mai. de 2026, 17_11_15.png">
+
+  <style>
+   body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0f172a;
+    color: white;
+  }
+
+
+    header {
+      background: #020617;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+      transition: 0.3s;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: cyan;
+      text-shadow: 0 0 5px cyan;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 120px 20px;
+      background: linear-gradient(to right, #0ea5e9, #9333ea);
+    }
+
+    .hero h1 {
+      font-size: 3em;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      padding: 50px;
+    }
+
+    .card {
+      display: block;
+      background: #1e293b;
+      padding: 25px;
+      border-radius: 15px;
+      text-decoration: none;
+      color: white;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      top: -100%;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(0, 255, 255, 0.3),
+        transparent
+      );
+      transition: 0.5s;
+    }
+
+    .card:hover::before {
+      top: 100%;
+    }
+
+    .card:hover {
+      transform: scale(1.08) rotate(1deg);
+      box-shadow: 0 0 15px cyan, 0 0 30px rgba(0,255,255,0.5);
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: #020617;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h2>AlitaPédia</h2>
+  <nav>
+    <a href="AlitaPedia.html">Home</a>
+    <a href="quemsomos.html">Sobre</a>
+    <a href="contato.html">Contato</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Bem-vindo ao AlitaPédia</h1>
+  <p>A biblioteca de Cellina Orizzontte</p>
+</section>
+
+<section class="cards">
+
+  <a href="arcos.html" class="card">
+    <h3>Arcos</h3>
+    <p>É aqui onde a história se desenrola</p>
+  </a>
+
+  <a href="clas.html" class="card">
+    <h3>Clãs</h3>
+    <p>As linhagens e seus sangues</p>
+  </a>
+
+  <a href="raca.html" class="card">
+    <h3>Raças</h3>
+    <p>Ser diferente não é problema</p>
+  </a>
+
+  <a href="cidades.html" class="card">
+    <h3>Cidades</h3>
+    <p>Diferentes povos, diferentes culturas</p>
+  </a>
+
+  <a href="especializacoes.html" class="card">
+    <h3>Especializações</h3>
+    <p>A graça desse mundo</p>
+  </a>
+
+</section>
+
+<footer>
+  <p>© 2019 - Alita Chávez</p>
+</footer>
+
+</body>
+</html>

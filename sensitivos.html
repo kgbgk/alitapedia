@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sensitivos</title>
+
+  <style>
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: white;
+
+      background:
+      radial-gradient(circle at top,
+      #134e4a,
+      #020617 75%);
+    }
+
+    /* HEADER */
+
+    header {
+
+      background:
+      rgba(2,6,23,0.95);
+
+      padding: 20px;
+
+      text-align: center;
+
+      border-bottom:
+      2px solid #2dd4bf;
+
+      position: sticky;
+
+      top: 0;
+
+      z-index: 1000;
+
+      backdrop-filter: blur(10px);
+    }
+
+    header h1 {
+
+      margin: 0;
+
+      color: #99f6e4;
+
+      letter-spacing: 3px;
+
+      text-shadow:
+      0 0 10px #2dd4bf,
+      0 0 30px #0f766e;
+    }
+
+    /* HERO */
+
+    .hero {
+
+      text-align: center;
+
+      padding: 120px 20px;
+
+      background:
+      linear-gradient(
+      rgba(0,0,0,0.65),
+      rgba(0,0,0,0.9)),
+      radial-gradient(circle at center,
+      #2dd4bf,
+      #0f766e,
+      #020617);
+
+      position: relative;
+
+      overflow: hidden;
+    }
+
+    /* PARTÍCULAS */
+
+    .hero::before {
+
+      content: "";
+
+      position: absolute;
+
+      width: 200%;
+      height: 200%;
+
+      background:
+      radial-gradient(white 1px, transparent 1px);
+
+      background-size: 40px 40px;
+
+      opacity: 0.08;
+
+      animation: flutuar 25s linear infinite;
+    }
+
+    @keyframes flutuar {
+
+      from {
+        transform: translateY(0);
+      }
+
+      to {
+        transform: translateY(180px);
+      }
+
+    }
+
+    .hero h2 {
+
+      position: relative;
+
+      font-size: 4em;
+
+      margin-bottom: 10px;
+
+      color: #ccfbf1;
+
+      text-shadow:
+      0 0 20px #2dd4bf,
+      0 0 50px #0f766e;
+    }
+
+    .hero p {
+
+      position: relative;
+
+      font-size: 1.2em;
+
+      opacity: 0.8;
+    }
+
+    /* CONTAINER */
+
+    .container {
+      max-width: 950px;
+      margin: auto;
+      padding: 50px;
+    }
+
+    /* CARD */
+
+    .clan {
+
+      background:
+      rgba(255,255,255,0.05);
+
+      border:
+      1px solid rgba(45,212,191,0.25);
+
+      border-radius: 18px;
+
+      margin-bottom: 25px;
+
+      overflow: hidden;
+
+      cursor: pointer;
+
+      transition: 0.4s;
+
+      backdrop-filter: blur(10px);
+
+      box-shadow:
+      0 0 15px rgba(45,212,191,0.08);
+    }
+
+    .clan:hover {
+
+      transform:
+      scale(1.02)
+      translateY(-5px);
+
+      border-color: #2dd4bf;
+
+      box-shadow:
+      0 0 20px rgba(45,212,191,0.3),
+      0 0 50px rgba(15,118,110,0.25);
+    }
+
+    /* TOPO */
+
+    .clan-topo {
+      padding: 25px;
+    }
+
+    .clan-topo h3 {
+
+      margin: 0;
+
+      color: #99f6e4;
+
+      font-size: 2em;
+
+      text-shadow:
+      0 0 10px rgba(45,212,191,0.4);
+    }
+
+    .clan-topo p {
+
+      margin-top: 8px;
+
+      opacity: 0.75;
+    }
+
+    /* CONTEÚDO */
+
+    .clan-conteudo {
+
+      max-height: 0;
+
+      overflow: hidden;
+
+      transition:
+      max-height 0.5s ease;
+
+      background:
+      rgba(0,0,0,0.3);
+    }
+
+    .clan-conteudo p {
+
+      padding: 25px;
+
+      margin: 0;
+
+      line-height: 1.8;
+
+      opacity: 0.9;
+    }
+
+    /* ABRIR */
+
+    .clan.ativo .clan-conteudo {
+      max-height: 300px;
+    }
+
+    /* BOTÃO */
+
+    .voltar {
+
+      display: inline-block;
+
+      margin-top: 30px;
+
+      text-decoration: none;
+
+      color: white;
+
+      border:
+      2px solid #2dd4bf;
+
+      padding: 12px 20px;
+
+      border-radius: 10px;
+
+      transition: 0.3s;
+    }
+
+    .voltar:hover {
+
+      background: #2dd4bf;
+
+      color: black;
+
+      box-shadow:
+      0 0 20px #2dd4bf;
+
+      transform: scale(1.05);
+    }
+
+    /* FOOTER */
+
+    footer {
+
+      text-align: center;
+
+      padding: 25px;
+
+      background: #020617;
+
+      margin-top: 50px;
+
+      border-top:
+      1px solid rgba(45,212,191,0.2);
+
+      opacity: 0.8;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>AlitaPédia</h1>
+</header>
+
+<section class="hero">
+
+  <h2>Sensitivos</h2>
+
+  <p>
+    Clãs conectados à percepção extrema e influência sensorial.
+  </p>
+
+</section>
+
+<section class="container">
+
+  <!-- MENSAH -->
+
+  <div class="clan" onclick="abrirClan(this)">
+
+    <div class="clan-topo">
+      <h3>Mensah</h3>
+      <p>Sentidos hiper aguçados</p>
+    </div>
+
+    <div class="clan-conteudo">
+      <p>
+        Os Mensah possuem percepção sensorial extrema,
+        capazes de detectar movimentos, sons e presenças
+        quase impossíveis de notar.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- ÇEKMEN -->
+
+  <div class="clan" onclick="abrirClan(this)">
+
+    <div class="clan-topo">
+      <h3>Çekmen</h3>
+      <p>Ecos aleatórios de ataques</p>
+    </div>
+
+    <div class="clan-conteudo">
+      <p>
+        Os Çekmen criam ecos imprevisíveis de golpes,
+        replicando ataques em momentos e direções inesperadas.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- DE BRUJIN -->
+
+  <div class="clan" onclick="abrirClan(this)">
+
+    <div class="clan-topo">
+      <h3>De Brujin</h3>
+      <p>Fragrâncias e aromas</p>
+    </div>
+
+    <div class="clan-conteudo">
+      <p>
+        Os De Brujin manipulam odores e fragrâncias,
+        influenciando emoções, memórias e percepção mental.
+      </p>
+    </div>
+
+  </div>
+
+  <a href="clas.html" class="voltar">
+    ⬅ Voltar
+  </a>
+
+</section>
+
+<footer>
+  <p>© AlitaPédia — Sensitivos</p>
+</footer>
+
+<script>
+
+  function abrirClan(elemento) {
+    elemento.classList.toggle("ativo");
+  }
+
+</script>
+
+</body>
+</html>

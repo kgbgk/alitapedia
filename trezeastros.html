@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Os Treze Astros</title>
+
+  <style>
+
+    /* BODY */
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+
+      background:
+      radial-gradient(circle at top,
+      #140021,
+      #020617 75%);
+
+      color: white;
+    }
+
+    /* HEADER */
+
+    header {
+      background: rgba(2,6,23,0.95);
+
+      padding: 20px;
+
+      text-align: center;
+
+      border-bottom:
+      2px solid #ec4899;
+
+      position: sticky;
+
+      top: 0;
+
+      z-index: 1000;
+
+      backdrop-filter: blur(10px);
+    }
+
+    header h1 {
+
+      margin: 0;
+
+      color: #f9a8d4;
+
+      letter-spacing: 3px;
+
+      text-shadow:
+      0 0 10px #ec4899,
+      0 0 30px #be185d;
+    }
+
+    /* HERO */
+
+    .hero {
+
+      text-align: center;
+
+      padding: 120px 20px;
+
+      background:
+      linear-gradient(
+      rgba(0,0,0,0.65),
+      rgba(0,0,0,0.9)),
+      radial-gradient(circle at center,
+      #ec4899,
+      #7e22ce,
+      #020617);
+
+      position: relative;
+
+      overflow: hidden;
+    }
+
+    /* ESTRELAS */
+
+    .hero::before {
+
+      content: "";
+
+      position: absolute;
+
+      width: 200%;
+      height: 200%;
+
+      background:
+      radial-gradient(white 1px, transparent 1px);
+
+      background-size: 55px 55px;
+
+      opacity: 0.12;
+
+      animation: estrelas 50s linear infinite;
+    }
+
+    @keyframes estrelas {
+
+      from {
+        transform: translateY(0);
+      }
+
+      to {
+        transform: translateY(250px);
+      }
+
+    }
+
+    .hero h2 {
+
+      position: relative;
+
+      font-size: 4em;
+
+      margin-bottom: 10px;
+
+      color: #fce7f3;
+
+      text-shadow:
+      0 0 20px #ec4899,
+      0 0 50px #7e22ce;
+    }
+
+    .hero p {
+
+      position: relative;
+
+      font-size: 1.2em;
+
+      opacity: 0.8;
+    }
+
+    /* CONTAINER */
+
+    .container {
+      padding: 50px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    /* CLÃ */
+
+    .clan {
+
+      background:
+      rgba(255,255,255,0.05);
+
+      border:
+      1px solid rgba(236,72,153,0.25);
+
+      margin-bottom: 25px;
+
+      border-radius: 18px;
+
+      overflow: hidden;
+
+      transition: 0.4s;
+
+      cursor: pointer;
+
+      backdrop-filter: blur(10px);
+
+      box-shadow:
+      0 0 15px rgba(236,72,153,0.08);
+    }
+
+    .clan:hover {
+
+      transform:
+      scale(1.02)
+      translateY(-5px);
+
+      box-shadow:
+      0 0 20px rgba(236,72,153,0.3),
+      0 0 60px rgba(126,34,206,0.25);
+
+      border-color: #ec4899;
+    }
+
+    /* TOPO */
+
+    .clan-topo {
+      padding: 25px;
+    }
+
+    .clan-topo h3 {
+
+      margin: 0;
+
+      color: #f9a8d4;
+
+      font-size: 2em;
+
+      text-shadow:
+      0 0 10px rgba(236,72,153,0.4);
+    }
+
+    .clan-topo p {
+
+      margin-top: 8px;
+
+      opacity: 0.75;
+    }
+
+    /* CONTEÚDO */
+
+    .clan-conteudo {
+
+      max-height: 0;
+
+      overflow: hidden;
+
+      transition:
+      max-height 0.5s ease;
+
+      background:
+      rgba(0,0,0,0.3);
+    }
+
+    .clan-conteudo p {
+
+      padding: 25px;
+
+      margin: 0;
+
+      line-height: 1.8;
+
+      opacity: 0.9;
+    }
+
+    /* ABRIR */
+
+    .clan.ativo .clan-conteudo {
+      max-height: 400px;
+    }
+
+    /* BOTÃO */
+
+    .voltar {
+
+      display: inline-block;
+
+      margin-top: 30px;
+
+      text-decoration: none;
+
+      color: white;
+
+      border:
+      2px solid #ec4899;
+
+      padding: 12px 20px;
+
+      border-radius: 10px;
+
+      transition: 0.3s;
+    }
+
+    .voltar:hover {
+
+      background: #ec4899;
+
+      box-shadow:
+      0 0 20px #ec4899;
+
+      transform: scale(1.05);
+    }
+
+    /* FOOTER */
+
+    footer {
+
+      text-align: center;
+
+      padding: 25px;
+
+      background: #020617;
+
+      margin-top: 50px;
+
+      border-top:
+      1px solid rgba(236,72,153,0.2);
+
+      opacity: 0.8;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>AlitaPédia</h1>
+</header>
+
+<section class="hero">
+
+  <h2>Os Treze Astros</h2>
+
+  <p>
+    As treze linhagens celestiais do universo.
+  </p>
+
+</section>
+
+<section class="container">
+
+  <div class="clan" onclick="abrirClan(this)">
+    <div class="clan-topo">
+      <h3>Hikui</h3>
+      <p>Absorção</p>
+    </div>
+
+    <div class="clan-conteudo">
+      <p>
+        Os Hikui absorvem ataques, impactos e energia,
+        convertendo forças inimigas em resistência e poder.
+      </p>
+    </div>
+  </div>
+
+  <div class="clan" onclick="abrirClan(this)">
+    <div class="clan-topo">
+      <h3>Shinsetsu</h3>
+      <p>Reflexão</p>
+    </div>
+
+    <div class="clan-conteudo">
+      <p>
+        Os Shinsetsu refletem ataques físicos, mágicos e energéticos,
+        devolvendo aos inimigos sua própria destruição.
+      </p>
+    </div>
+  </div>
+
+  <div class="clan" onclick="abrirClan(this)">
+    <div class="clan-topo">
+      <h3>Ikari</h3>
+      <p>Evolução</p>
+    </div>
+
+    <div class="clan-conteudo">
+      <p>
+        Os Ikari adaptam-se durante o combate,
+        copiando movimentos e evoluindo constantemente.
+      </p>
+    </div>
+  </div>
+
+  <div class="clan" onclick="abrirClan(this)">
+    <div class="clan-topo">
+      <h3>Shirã</h3>
+      <p>Potenciação</p>
+    </div>
+
+    <div class="clan-conteudo">
+      <p>
+        Os Shirã possuem força física monstruosa,
+        amplificando atributos corporais ao extremo.
+      </p>
+    </div>
+  </div>
+
+  <div class="clan" onclick="abrirClan(this)">
+    <div class="clan-topo">
+      <h3>Phamtomaive</h3>
+      <p>Infinidade</p>
+    </div>
+
+    <div class="clan-conteudo">
+      <p>
+        Os Phamtomaive manipulam Henki puro e conceitos infinitos,
+        transcendendo limites convencionais.
+      </p>
+    </div>
+  </div>
+
+  <div class="clan" onclick="abrirClan(this)">
+    <div class="clan-topo">
+      <h3>Wolfhard</h3>
+      <p>Transformação</p>
+    </div>
+
+    <div class="clan-conteudo">
+      <p>
+        Os Wolfhard alteram essência, propriedades
+        e a natureza de objetos ou seres vivos.
+      </p>
+    </div>
+  </div>
+
+  <div class="clan" onclick="abrirClan(this)">
+    <div class="clan-topo">
+      <h3>Chen</h3>
+      <p>Gravitação</p>
+    </div>
+
+    <div class="clan-conteudo">
+      <p>
+        Os Chen controlam a gravidade,
+        distorcendo peso, órbitas e pressão espacial.
+      </p>
+    </div>
+  </div>
+
+  <div class="clan" onclick="abrirClan(this)">
+    <div class="clan-topo">
+      <h3>Kisaragi</h3>
+      <p>Equilíbrio</p>
+    </div>
+
+    <div class="clan-conteudo">
+      <p>
+        Os Kisaragi manipulam ossos e estruturas,
+        mantendo equilíbrio absoluto entre força e estabilidade.
+      </p>
+    </div>
+  </div>
+
+  <div class="clan" onclick="abrirClan(this)">
+    <div class="clan-topo">
+      <h3>Haruzaki</h3>
+      <p>Elementização</p>
+    </div>
+
+    <div class="clan-conteudo">
+      <p>
+        Os Haruzaki possuem múltiplos Taikas originais,
+        dominando diversos elementos simultaneamente.
+      </p>
+    </div>
+  </div>
+
+  <div class="clan" onclick="abrirClan(this)">
+    <div class="clan-topo">
+      <h3>Kazami</h3>
+      <p>Percepção</p>
+    </div>
+
+    <div class="clan-conteudo">
+      <p>
+        Os Kazami enxergam além dos sentidos comuns,
+        possuindo percepção expandida em 360°.
+      </p>
+    </div>
+  </div>
+
+  <div class="clan" onclick="abrirClan(this)">
+    <div class="clan-topo">
+      <h3>Vangeance</h3>
+      <p>Manifestação</p>
+    </div>
+
+    <div class="clan-conteudo">
+      <p>
+        Os Vangeance materializam Henki puro,
+        transformando energia espiritual em matéria física.
+      </p>
+    </div>
+  </div>
+
+  <div class="clan" onclick="abrirClan(this)">
+    <div class="clan-topo">
+      <h3>Sora</h3>
+      <p>Criação</p>
+    </div>
+
+    <div class="clan-conteudo">
+      <p>
+        Os Sora criam matéria, estruturas e objetos do absoluto nada.
+      </p>
+    </div>
+  </div>
+
+  <div class="clan" onclick="abrirClan(this)">
+    <div class="clan-topo">
+      <h3>Arashi</h3>
+      <p>Destruição</p>
+    </div>
+
+    <div class="clan-conteudo">
+      <p>
+        Os Arashi apagam, deformam e destroem
+        matéria e energia em larga escala.
+      </p>
+    </div>
+  </div>
+
+  <a href="clas.html" class="voltar">
+    ⬅ Voltar
+  </a>
+
+</section>
+
+<footer>
+  <p>© AlitaPédia — Os Treze Astros</p>
+</footer>
+
+<script>
+
+  function abrirClan(elemento) {
+    elemento.classList.toggle("ativo");
+  }
+
+</script>
+
+</body>
+</html>

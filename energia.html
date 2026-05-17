@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Energia</title>
+
+  <style>
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: white;
+
+      background:
+      radial-gradient(circle at top,
+      #3b0000,
+      #020617 75%);
+    }
+
+    /* HEADER */
+
+    header {
+
+      background:
+      rgba(2,6,23,0.95);
+
+      padding: 20px;
+
+      text-align: center;
+
+      border-bottom:
+      2px solid #facc15;
+
+      position: sticky;
+
+      top: 0;
+
+      z-index: 1000;
+
+      backdrop-filter: blur(10px);
+    }
+
+    header h1 {
+
+      margin: 0;
+
+      color: #fef9c3;
+
+      letter-spacing: 3px;
+
+      text-shadow:
+      0 0 10px #fde047,
+      0 0 35px #f59e0b;
+    }
+
+    /* HERO */
+
+    .hero {
+
+      text-align: center;
+
+      padding: 120px 20px;
+
+      background:
+      linear-gradient(
+      rgba(0,0,0,0.7),
+      rgba(0,0,0,0.95)),
+      radial-gradient(circle at center,
+      #facc15,
+      #dc2626,
+      #020617);
+
+      position: relative;
+
+      overflow: hidden;
+    }
+
+    /* PARTÍCULAS ENERGÉTICAS */
+
+    .hero::before {
+
+      content: "";
+
+      position: absolute;
+
+      width: 200%;
+      height: 200%;
+
+      background:
+      radial-gradient(
+      rgba(255,255,255,0.12) 2px,
+      transparent 2px);
+
+      background-size: 70px 70px;
+
+      animation: energia 12s linear infinite;
+    }
+
+    @keyframes energia {
+
+      from {
+        transform:
+        translateY(0)
+        rotate(0deg);
+      }
+
+      to {
+        transform:
+        translateY(-150px)
+        rotate(8deg);
+      }
+
+    }
+
+    .hero h2 {
+
+      position: relative;
+
+      font-size: 4em;
+
+      margin-bottom: 10px;
+
+      color: #fffde7;
+
+      text-shadow:
+      0 0 20px #fde047,
+      0 0 50px #f97316;
+    }
+
+    .hero p {
+
+      position: relative;
+
+      font-size: 1.2em;
+
+      opacity: 0.85;
+    }
+
+    /* CONTAINER */
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 50px;
+    }
+
+    /* CARDS */
+
+    .clan {
+
+      background:
+      rgba(255,255,255,0.05);
+
+      border:
+      1px solid rgba(250,204,21,0.25);
+
+      border-radius: 18px;
+
+      margin-bottom: 25px;
+
+      overflow: hidden;
+
+      cursor: pointer;
+
+      transition: 0.4s;
+
+      backdrop-filter: blur(10px);
+
+      box-shadow:
+      0 0 15px rgba(250,204,21,0.08);
+    }
+
+    .clan:hover {
+
+      transform:
+      scale(1.02)
+      translateY(-5px);
+
+      border-color: #fde047;
+
+      box-shadow:
+      0 0 20px rgba(253,224,71,0.3),
+      0 0 50px rgba(249,115,22,0.25);
+    }
+
+    /* TOPO */
+
+    .clan-topo {
+      padding: 25px;
+    }
+
+    .clan-topo h3 {
+
+      margin: 0;
+
+      color: #fef9c3;
+
+      font-size: 2em;
+
+      text-shadow:
+      0 0 10px rgba(253,224,71,0.4);
+    }
+
+    .clan-topo p {
+
+      margin-top: 8px;
+
+      opacity: 0.75;
+    }
+
+    /* CONTEÚDO */
+
+    .clan-conteudo {
+
+      max-height: 0;
+
+      overflow: hidden;
+
+      transition:
+      max-height 0.5s ease;
+
+      background:
+      rgba(0,0,0,0.4);
+    }
+
+    .clan-conteudo p {
+
+      padding: 25px;
+
+      margin: 0;
+
+      line-height: 1.8;
+
+      opacity: 0.9;
+    }
+
+    /* ABRIR */
+
+    .clan.ativo .clan-conteudo {
+      max-height: 350px;
+    }
+
+    /* BOTÃO */
+
+    .voltar {
+
+      display: inline-block;
+
+      margin-top: 30px;
+
+      text-decoration: none;
+
+      color: white;
+
+      border:
+      2px solid #fde047;
+
+      padding: 12px 20px;
+
+      border-radius: 10px;
+
+      transition: 0.3s;
+    }
+
+    .voltar:hover {
+
+      background: #fde047;
+
+      color: black;
+
+      box-shadow:
+      0 0 20px #fde047;
+
+      transform: scale(1.05);
+    }
+
+    /* FOOTER */
+
+    footer {
+
+      text-align: center;
+
+      padding: 25px;
+
+      background: #020617;
+
+      margin-top: 50px;
+
+      border-top:
+      1px solid rgba(250,204,21,0.2);
+
+      opacity: 0.8;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>AlitaPédia</h1>
+</header>
+
+<section class="hero">
+
+  <h2>Energia</h2>
+
+  <p>
+    Clãs que manipulam forças energéticas destrutivas e fenômenos extremos.
+  </p>
+
+</section>
+
+<section class="container">
+
+  <!-- DENGIZ -->
+
+  <div class="clan" onclick="abrirClan(this)">
+
+    <div class="clan-topo">
+      <h3>Dengiz</h3>
+      <p>Radiação e atomicidade</p>
+    </div>
+
+    <div class="clan-conteudo">
+      <p>
+        Os Dengiz manipulam radiação,
+        partículas atômicas e instabilidade energética devastadora.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- ALMEIDA -->
+
+  <div class="clan" onclick="abrirClan(this)">
+
+    <div class="clan-topo">
+      <h3>Almeida</h3>
+      <p>Explosões e pólvora</p>
+    </div>
+
+    <div class="clan-conteudo">
+      <p>
+        Os Almeida produzem explosões massivas,
+        combustões rápidas e manipulação de pólvora mágica.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- ENRYŌ -->
+
+  <div class="clan" onclick="abrirClan(this)">
+
+    <div class="clan-topo">
+      <h3>Enryō</h3>
+      <p>Temperatura e energia térmica</p>
+    </div>
+
+    <div class="clan-conteudo">
+      <p>
+        Os Enryō controlam calor extremo,
+        variações térmicas e emissão intensa de energia calorífica.
+      </p>
+    </div>
+
+  </div>
+
+  <a href="clas.html" class="voltar">
+    ⬅ Voltar
+  </a>
+
+</section>
+
+<footer>
+  <p>© AlitaPédia — Energia</p>
+</footer>
+
+<script>
+
+  function abrirClan(elemento) {
+    elemento.classList.toggle("ativo");
+  }
+
+</script>
+
+</body>
+</html>

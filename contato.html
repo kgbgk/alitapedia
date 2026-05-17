@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arco de Valaus</title>
+
+  <!-- Fonte estilo wiki moderna (Fandom-like) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #0b0f19;
+      color: #e5e7eb;
+    }
+
+    header {
+      background: #111827;
+      padding: 16px 20px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-inner {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #f9fafb;
+      letter-spacing: 0.5px;
+    }
+
+    /* estilo tipo fandom: barra simples + limpa */
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    .title {
+      text-align: center;
+      font-size: 2.4rem;
+      font-weight: 700;
+      margin-bottom: 25px;
+      color: #fbbf24;
+    }
+
+    /* TABS estilo wiki */
+    .tabs {
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding-bottom: 10px;
+    }
+
+    .tab-btn {
+      background: transparent;
+      border: none;
+      color: #cbd5e1;
+      padding: 10px 14px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border-bottom: 2px solid transparent;
+      transition: 0.2s;
+    }
+
+    .tab-btn:hover {
+      color: white;
+      border-bottom: 2px solid #fbbf24;
+    }
+
+    .tab-btn.active {
+      color: #fbbf24;
+      border-bottom: 2px solid #fbbf24;
+    }
+
+    /* conteúdo */
+    .box {
+      display: none;
+      background: #111827;
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 10px;
+      padding: 22px;
+      margin-bottom: 20px;
+    }
+
+    .box.active {
+      display: block;
+    }
+
+    .box h2 {
+      margin-top: 0;
+      color: #fbbf24;
+      font-size: 1.2rem;
+    }
+
+    .voltar {
+      display: block;
+      text-align: center;
+      margin-top: 40px;
+      text-decoration: none;
+      color: #e5e7eb;
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 10px;
+      border-radius: 8px;
+      transition: 0.2s;
+      max-width: 200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .voltar:hover {
+      background: #fbbf24;
+      color: black;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #111827;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #9ca3af;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-inner">
+    <h1>AlitaPédia</h1>
+  </div>
+</header>
+
+<div class="container">
+
+  <div class="title">Arco de Valaus</div>
+
+  <!-- TABS CENTRALIZADAS CORRETAMENTE -->
+  <div class="tabs">
+    <button class="tab-btn active" onclick="openTab(event, 'historia')">História</button>
+    <button class="tab-btn" onclick="openTab(event, 'capitulos')">Capítulos</button>
+    <button class="tab-btn" onclick="openTab(event, 'personagens')">Personagens em Foco</button>
+  </div>
+
+  <!-- HISTÓRIA -->
+  <div id="historia" class="box active">
+    <h2>O Colégio</h2>
+    <p>
+      O Colégio Alita Chávez ergue-se como um centro de conhecimento e conflito,
+      onde destinos são moldados.
+    </p>
+
+    <h2>Conflito</h2>
+    <p>
+      A Prova de Admissão se inicia. Alianças surgem, poderes despertam e apenas alguns sobreviverão ao processo.
+    </p>
+  </div>
+
+  <!-- CAPÍTULOS -->
+  <div id="capitulos" class="box">
+    <h2>Capítulos</h2>
+    <p>Lista de eventos e episódios do arco será organizada aqui.</p>
+  </div>
+
+  <!-- PERSONAGENS -->
+  <div id="personagens" class="box">
+    <h2>Personagens em Foco</h2>
+    <p>Principais personagens do arco de Valaus e suas relações.</p>
+  </div>
+
+  <a href="AlitaPedia.html" class="voltar">⬅ Voltar</a>
+
+</div>
+
+<footer>
+  <p>© 2019 - Alita Chávez</p>
+</footer>
+
+<script>
+  function openTab(event, tabId) {
+    const boxes = document.querySelectorAll('.box');
+    const buttons = document.querySelectorAll('.tab-btn');
+
+    boxes.forEach(b => b.classList.remove('active'));
+    buttons.forEach(b => b.classList.remove('active'));
+
+    document.getElementById(tabId).classList.add('active');
+    event.currentTarget.classList.add('active');
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orgânicos</title>
+
+  <style>
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: white;
+
+      background:
+      radial-gradient(circle at top,
+      #14532d,
+      #020617 75%);
+    }
+
+    /* HEADER */
+
+    header {
+
+      background:
+      rgba(2,6,23,0.95);
+
+      padding: 20px;
+
+      text-align: center;
+
+      border-bottom:
+      2px solid #22c55e;
+
+      position: sticky;
+
+      top: 0;
+
+      z-index: 1000;
+
+      backdrop-filter: blur(10px);
+    }
+
+    header h1 {
+
+      margin: 0;
+
+      color: #dcfce7;
+
+      letter-spacing: 3px;
+
+      text-shadow:
+      0 0 10px #22c55e,
+      0 0 35px #15803d;
+    }
+
+    /* HERO */
+
+    .hero {
+
+      text-align: center;
+
+      padding: 120px 20px;
+
+      background:
+      linear-gradient(
+      rgba(0,0,0,0.7),
+      rgba(0,0,0,0.92)),
+      radial-gradient(circle at center,
+      #22c55e,
+      #166534,
+      #020617);
+
+      position: relative;
+
+      overflow: hidden;
+    }
+
+    /* PARTÍCULAS NATURAIS */
+
+    .hero::before {
+
+      content: "";
+
+      position: absolute;
+
+      width: 200%;
+      height: 200%;
+
+      background:
+      radial-gradient(
+      rgba(255,255,255,0.08) 2px,
+      transparent 2px);
+
+      background-size: 60px 60px;
+
+      animation: natureza 20s linear infinite;
+    }
+
+    @keyframes natureza {
+
+      from {
+        transform: translateY(0);
+      }
+
+      to {
+        transform: translateY(-200px);
+      }
+
+    }
+
+    .hero h2 {
+
+      position: relative;
+
+      font-size: 4em;
+
+      margin-bottom: 10px;
+
+      color: #f0fdf4;
+
+      text-shadow:
+      0 0 20px #22c55e,
+      0 0 50px #15803d;
+    }
+
+    .hero p {
+
+      position: relative;
+
+      font-size: 1.2em;
+
+      opacity: 0.85;
+    }
+
+    /* CONTAINER */
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 50px;
+    }
+
+    /* CARD */
+
+    .clan {
+
+      background:
+      rgba(255,255,255,0.05);
+
+      border:
+      1px solid rgba(34,197,94,0.25);
+
+      border-radius: 18px;
+
+      margin-bottom: 25px;
+
+      overflow: hidden;
+
+      cursor: pointer;
+
+      transition: 0.4s;
+
+      backdrop-filter: blur(10px);
+
+      box-shadow:
+      0 0 15px rgba(34,197,94,0.08);
+    }
+
+    .clan:hover {
+
+      transform:
+      scale(1.02)
+      translateY(-5px);
+
+      border-color: #22c55e;
+
+      box-shadow:
+      0 0 20px rgba(34,197,94,0.3),
+      0 0 50px rgba(21,128,61,0.25);
+    }
+
+    /* TOPO */
+
+    .clan-topo {
+      padding: 25px;
+    }
+
+    .clan-topo h3 {
+
+      margin: 0;
+
+      color: #dcfce7;
+
+      font-size: 2em;
+
+      text-shadow:
+      0 0 10px rgba(34,197,94,0.4);
+    }
+
+    .clan-topo p {
+
+      margin-top: 8px;
+
+      opacity: 0.75;
+    }
+
+    /* CONTEÚDO */
+
+    .clan-conteudo {
+
+      max-height: 0;
+
+      overflow: hidden;
+
+      transition:
+      max-height 0.5s ease;
+
+      background:
+      rgba(0,0,0,0.35);
+    }
+
+    .clan-conteudo p {
+
+      padding: 25px;
+
+      margin: 0;
+
+      line-height: 1.8;
+
+      opacity: 0.9;
+    }
+
+    /* ABRIR */
+
+    .clan.ativo .clan-conteudo {
+      max-height: 400px;
+    }
+
+    /* BOTÃO */
+
+    .voltar {
+
+      display: inline-block;
+
+      margin-top: 30px;
+
+      text-decoration: none;
+
+      color: white;
+
+      border:
+      2px solid #22c55e;
+
+      padding: 12px 20px;
+
+      border-radius: 10px;
+
+      transition: 0.3s;
+    }
+
+    .voltar:hover {
+
+      background: #22c55e;
+
+      color: black;
+
+      box-shadow:
+      0 0 20px #22c55e;
+
+      transform: scale(1.05);
+    }
+
+    /* FOOTER */
+
+    footer {
+
+      text-align: center;
+
+      padding: 25px;
+
+      background: #020617;
+
+      margin-top: 50px;
+
+      border-top:
+      1px solid rgba(34,197,94,0.2);
+
+      opacity: 0.8;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>AlitaPédia</h1>
+</header>
+
+<section class="hero">
+
+  <h2>Orgânicos</h2>
+
+  <p>
+    Clãs ligados à biologia, adaptação natural e mutações vivas.
+  </p>
+
+</section>
+
+<section class="container">
+
+  <!-- PENTAFlORE -->
+
+  <div class="clan" onclick="abrirClan(this)">
+
+    <div class="clan-topo">
+      <h3>Pentaflore</h3>
+      <p>Flores e exoesqueleto insetral</p>
+    </div>
+
+    <div class="clan-conteudo">
+      <p>
+        Os Pentaflore combinam estruturas florais
+        com características insetrais resistentes e adaptáveis.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- ROODHART -->
+
+  <div class="clan" onclick="abrirClan(this)">
+
+    <div class="clan-topo">
+      <h3>Roodhart</h3>
+      <p>Sangue</p>
+    </div>
+
+    <div class="clan-conteudo">
+      <p>
+        Os Roodhart manipulam o próprio sangue
+        para combate, regeneração e fortalecimento físico.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- ICHIBA -->
+
+  <div class="clan" onclick="abrirClan(this)">
+
+    <div class="clan-topo">
+      <h3>Ichiba</h3>
+      <p>Ihmises carnívoros</p>
+    </div>
+
+    <div class="clan-conteudo">
+      <p>
+        Os Ichiba possuem fisiologia agressiva,
+        sentidos predatórios e impulsos violentos de caça.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- GIYAKAH -->
+
+  <div class="clan" onclick="abrirClan(this)">
+
+    <div class="clan-topo">
+      <h3>Giyakah</h3>
+      <p>Ihmises herbívoros</p>
+    </div>
+
+    <div class="clan-conteudo">
+      <p>
+        Os Giyakah focam em resistência,
+        suporte biológico e adaptação natural extrema.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- OMNIBARA -->
+
+  <div class="clan" onclick="abrirClan(this)">
+
+    <div class="clan-topo">
+      <h3>Omnibara</h3>
+      <p>Ihmises onívoros</p>
+    </div>
+
+    <div class="clan-conteudo">
+      <p>
+        Os Omnibara equilibram agressividade,
+        sobrevivência e adaptação versátil.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- NAUTÍDOS -->
+
+  <div class="clan" onclick="abrirClan(this)">
+
+    <div class="clan-topo">
+      <h3>Nautídos</h3>
+      <p>Feras marítimas</p>
+    </div>
+
+    <div class="clan-conteudo">
+      <p>
+        Os Nautídos possuem ligação com criaturas oceânicas,
+        desenvolvendo habilidades aquáticas monstruosas.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- BEAUMONT -->
+
+  <div class="clan" onclick="abrirClan(this)">
+
+    <div class="clan-topo">
+      <h3>Beaumont</h3>
+      <p>Penas</p>
+    </div>
+
+    <div class="clan-conteudo">
+      <p>
+        Os Beaumont manipulam penas cortantes,
+        voo parcial e estruturas aéreas refinadas.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- BAKUTO -->
+
+  <div class="clan" onclick="abrirClan(this)">
+
+    <div class="clan-topo">
+      <h3>Bakuto</h3>
+      <p>Transformação animal</p>
+    </div>
+
+    <div class="clan-conteudo">
+      <p>
+        Os Bakuto assumem características bestiais,
+        adquirindo habilidades animais específicas.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- PODÔE -->
+
+  <div class="clan" onclick="abrirClan(this)">
+
+    <div class="clan-topo">
+      <h3>Podôe</h3>
+      <p>Seda e teias</p>
+    </div>
+
+    <div class="clan-conteudo">
+      <p>
+        Os Podôe produzem seda resistente
+        e teias mágicas de captura e contenção.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- PUTRESKA -->
+
+  <div class="clan" onclick="abrirClan(this)">
+
+    <div class="clan-topo">
+      <h3>Putreska</h3>
+      <p>Vermes e sanguessugas</p>
+    </div>
+
+    <div class="clan-conteudo">
+      <p>
+        Os Putreska utilizam organismos parasitários,
+        drenagem vital e infestação biológica.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- FENG -->
+
+  <div class="clan" onclick="abrirClan(this)">
+
+    <div class="clan-topo">
+      <h3>Fēng</h3>
+      <p>Venenos e toxinas</p>
+    </div>
+
+    <div class="clan-conteudo">
+      <p>
+        Os Fēng manipulam toxinas mortais,
+        venenos progressivos e substâncias corrosivas.
+      </p>
+    </div>
+
+  </div>
+
+  <a href="clas.html" class="voltar">
+    ⬅ Voltar
+  </a>
+
+</section>
+
+<footer>
+  <p>© AlitaPédia — Orgânicos</p>
+</footer>
+
+<script>
+
+  function abrirClan(elemento) {
+    elemento.classList.toggle("ativo");
+  }
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Corpo a Corpo</title>
+
+  <style>
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: white;
+
+      background:
+      radial-gradient(circle at top,
+      #3f1d0d,
+      #020617 75%);
+    }
+
+    /* HEADER */
+
+    header {
+
+      background:
+      rgba(2,6,23,0.95);
+
+      padding: 20px;
+
+      text-align: center;
+
+      border-bottom:
+      2px solid #f97316;
+
+      position: sticky;
+
+      top: 0;
+
+      z-index: 1000;
+
+      backdrop-filter: blur(10px);
+    }
+
+    header h1 {
+
+      margin: 0;
+
+      color: #fed7aa;
+
+      letter-spacing: 3px;
+
+      text-shadow:
+      0 0 10px #fb923c,
+      0 0 35px #ea580c;
+    }
+
+    /* HERO */
+
+    .hero {
+
+      text-align: center;
+
+      padding: 120px 20px;
+
+      background:
+      linear-gradient(
+      rgba(0,0,0,0.7),
+      rgba(0,0,0,0.92)),
+      radial-gradient(circle at center,
+      #fb923c,
+      #c2410c,
+      #020617);
+
+      position: relative;
+
+      overflow: hidden;
+    }
+
+    /* EFEITO DE IMPACTO */
+
+    .hero::before {
+
+      content: "";
+
+      position: absolute;
+
+      width: 200%;
+      height: 200%;
+
+      background:
+      repeating-linear-gradient(
+      45deg,
+      rgba(255,255,255,0.05) 0px,
+      rgba(255,255,255,0.05) 2px,
+      transparent 2px,
+      transparent 40px);
+
+      animation: impacto 15s linear infinite;
+    }
+
+    @keyframes impacto {
+
+      from {
+        transform:
+        translateX(0)
+        rotate(0deg);
+      }
+
+      to {
+        transform:
+        translateX(-150px)
+        rotate(5deg);
+      }
+
+    }
+
+    .hero h2 {
+
+      position: relative;
+
+      font-size: 4em;
+
+      margin-bottom: 10px;
+
+      color: #fff7ed;
+
+      text-shadow:
+      0 0 20px #fb923c,
+      0 0 50px #ea580c;
+    }
+
+    .hero p {
+
+      position: relative;
+
+      font-size: 1.2em;
+
+      opacity: 0.85;
+    }
+
+    /* CONTAINER */
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 50px;
+    }
+
+    /* CARDS */
+
+    .clan {
+
+      background:
+      rgba(255,255,255,0.05);
+
+      border:
+      1px solid rgba(249,115,22,0.25);
+
+      border-radius: 18px;
+
+      margin-bottom: 25px;
+
+      overflow: hidden;
+
+      cursor: pointer;
+
+      transition: 0.4s;
+
+      backdrop-filter: blur(10px);
+
+      box-shadow:
+      0 0 15px rgba(249,115,22,0.08);
+    }
+
+    .clan:hover {
+
+      transform:
+      scale(1.02)
+      translateY(-5px);
+
+      border-color: #fb923c;
+
+      box-shadow:
+      0 0 20px rgba(251,146,60,0.3),
+      0 0 50px rgba(194,65,12,0.25);
+    }
+
+    /* TOPO */
+
+    .clan-topo {
+      padding: 25px;
+    }
+
+    .clan-topo h3 {
+
+      margin: 0;
+
+      color: #fed7aa;
+
+      font-size: 2em;
+
+      text-shadow:
+      0 0 10px rgba(251,146,60,0.4);
+    }
+
+    .clan-topo p {
+
+      margin-top: 8px;
+
+      opacity: 0.75;
+    }
+
+    /* CONTEÚDO */
+
+    .clan-conteudo {
+
+      max-height: 0;
+
+      overflow: hidden;
+
+      transition:
+      max-height 0.5s ease;
+
+      background:
+      rgba(0,0,0,0.35);
+    }
+
+    .clan-conteudo p {
+
+      padding: 25px;
+
+      margin: 0;
+
+      line-height: 1.8;
+
+      opacity: 0.9;
+    }
+
+    /* ABRIR */
+
+    .clan.ativo .clan-conteudo {
+      max-height: 350px;
+    }
+
+    /* BOTÃO */
+
+    .voltar {
+
+      display: inline-block;
+
+      margin-top: 30px;
+
+      text-decoration: none;
+
+      color: white;
+
+      border:
+      2px solid #fb923c;
+
+      padding: 12px 20px;
+
+      border-radius: 10px;
+
+      transition: 0.3s;
+    }
+
+    .voltar:hover {
+
+      background: #fb923c;
+
+      color: black;
+
+      box-shadow:
+      0 0 20px #fb923c;
+
+      transform: scale(1.05);
+    }
+
+    /* FOOTER */
+
+    footer {
+
+      text-align: center;
+
+      padding: 25px;
+
+      background: #020617;
+
+      margin-top: 50px;
+
+      border-top:
+      1px solid rgba(249,115,22,0.2);
+
+      opacity: 0.8;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>AlitaPédia</h1>
+</header>
+
+<section class="hero">
+
+  <h2>Corpo a Corpo</h2>
+
+  <p>
+    Clãs especializados em combate físico absoluto e adaptação marcial.
+  </p>
+
+</section>
+
+<section class="container">
+
+  <!-- AFJOLNIR -->
+
+  <div class="clan" onclick="abrirClan(this)">
+
+    <div class="clan-topo">
+      <h3>AFjolnir</h3>
+      <p>Velocidade e agilidade extrema</p>
+    </div>
+
+    <div class="clan-conteudo">
+      <p>
+        Os AFjolnir possuem velocidade absurda,
+        reflexos instantâneos e movimentação quase invisível.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- BONAVENTTO -->
+
+  <div class="clan" onclick="abrirClan(this)">
+
+    <div class="clan-topo">
+      <h3>Bonaventto</h3>
+      <p>Laminação e cortes</p>
+    </div>
+
+    <div class="clan-conteudo">
+      <p>
+        Os Bonaventto transformam o próprio corpo
+        em estruturas cortantes extremamente precisas.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- ARMSTRONG -->
+
+  <div class="clan" onclick="abrirClan(this)">
+
+    <div class="clan-topo">
+      <h3>Armstrong</h3>
+      <p>Endurecimento mineral corporal</p>
+    </div>
+
+    <div class="clan-conteudo">
+      <p>
+        Os Armstrong mineralizam o corpo,
+        alcançando resistência comparável a metais.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- T.MANTE -->
+
+  <div class="clan" onclick="abrirClan(this)">
+
+    <div class="clan-topo">
+      <h3>T.Mante</h3>
+      <p>Instinto predador e adaptação combativa</p>
+    </div>
+
+    <div class="clan-conteudo">
+      <p>
+        Os T.Mante evoluem durante o combate,
+        desenvolvendo respostas instintivas e predatórias.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- SHINRYU -->
+
+  <div class="clan" onclick="abrirClan(this)">
+
+    <div class="clan-topo">
+      <h3>Shinryu</h3>
+      <p>Maestria em artes marciais</p>
+    </div>
+
+    <div class="clan-conteudo">
+      <p>
+        Os Shinryu dominam inúmeras artes marciais,
+        atingindo perfeição técnica absoluta.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- DANSEI -->
+
+  <div class="clan" onclick="abrirClan(this)">
+
+    <div class="clan-topo">
+      <h3>Dansei</h3>
+      <p>Borracha e elasticidade corporal</p>
+    </div>
+
+    <div class="clan-conteudo">
+      <p>
+        Os Dansei alteram a elasticidade do corpo,
+        absorvendo impactos e ampliando alcance físico.
+      </p>
+    </div>
+
+  </div>
+
+  <a href="clas.html" class="voltar">
+    ⬅ Voltar
+  </a>
+
+</section>
+
+<footer>
+  <p>© AlitaPédia — Corpo a Corpo</p>
+</footer>
+
+<script>
+
+  function abrirClan(elemento) {
+    elemento.classList.toggle("ativo");
+  }
+
+</script>
+
+</body>
+</html>

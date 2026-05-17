@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assombrosos</title>
+
+  <style>
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: white;
+
+      background:
+      radial-gradient(circle at top,
+      #240046,
+      #020617 75%);
+    }
+
+    /* HEADER */
+
+    header {
+
+      background:
+      rgba(2,6,23,0.95);
+
+      padding: 20px;
+
+      text-align: center;
+
+      border-bottom:
+      2px solid #a855f7;
+
+      position: sticky;
+
+      top: 0;
+
+      z-index: 1000;
+
+      backdrop-filter: blur(10px);
+    }
+
+    header h1 {
+
+      margin: 0;
+
+      color: #f3e8ff;
+
+      letter-spacing: 3px;
+
+      text-shadow:
+      0 0 10px #c084fc,
+      0 0 35px #7e22ce;
+    }
+
+    /* HERO */
+
+    .hero {
+
+      text-align: center;
+
+      padding: 120px 20px;
+
+      background:
+      linear-gradient(
+      rgba(0,0,0,0.75),
+      rgba(0,0,0,0.95)),
+      radial-gradient(circle at center,
+      #9333ea,
+      #3b0764,
+      #020617);
+
+      position: relative;
+
+      overflow: hidden;
+    }
+
+    /* NÉVOA SOMBRIA */
+
+    .hero::before {
+
+      content: "";
+
+      position: absolute;
+
+      width: 200%;
+      height: 200%;
+
+      background:
+      radial-gradient(
+      rgba(255,255,255,0.05) 2px,
+      transparent 2px);
+
+      background-size: 90px 90px;
+
+      animation: nevoa 20s linear infinite;
+    }
+
+    @keyframes nevoa {
+
+      from {
+        transform:
+        translateX(0)
+        translateY(0);
+      }
+
+      to {
+        transform:
+        translateX(-150px)
+        translateY(-80px);
+      }
+
+    }
+
+    .hero h2 {
+
+      position: relative;
+
+      font-size: 4em;
+
+      margin-bottom: 10px;
+
+      color: #faf5ff;
+
+      text-shadow:
+      0 0 20px #c084fc,
+      0 0 50px #9333ea;
+    }
+
+    .hero p {
+
+      position: relative;
+
+      font-size: 1.2em;
+
+      opacity: 0.85;
+    }
+
+    /* CONTAINER */
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 50px;
+    }
+
+    /* CARDS */
+
+    .clan {
+
+      background:
+      rgba(255,255,255,0.05);
+
+      border:
+      1px solid rgba(168,85,247,0.25);
+
+      border-radius: 18px;
+
+      margin-bottom: 25px;
+
+      overflow: hidden;
+
+      cursor: pointer;
+
+      transition: 0.4s;
+
+      backdrop-filter: blur(10px);
+
+      box-shadow:
+      0 0 15px rgba(168,85,247,0.08);
+    }
+
+    .clan:hover {
+
+      transform:
+      scale(1.02)
+      translateY(-5px);
+
+      border-color: #c084fc;
+
+      box-shadow:
+      0 0 20px rgba(192,132,252,0.3),
+      0 0 50px rgba(126,34,206,0.25);
+    }
+
+    /* TOPO */
+
+    .clan-topo {
+      padding: 25px;
+    }
+
+    .clan-topo h3 {
+
+      margin: 0;
+
+      color: #f3e8ff;
+
+      font-size: 2em;
+
+      text-shadow:
+      0 0 10px rgba(192,132,252,0.4);
+    }
+
+    .clan-topo p {
+
+      margin-top: 8px;
+
+      opacity: 0.75;
+    }
+
+    /* CONTEÚDO */
+
+    .clan-conteudo {
+
+      max-height: 0;
+
+      overflow: hidden;
+
+      transition:
+      max-height 0.5s ease;
+
+      background:
+      rgba(0,0,0,0.4);
+    }
+
+    .clan-conteudo p {
+
+      padding: 25px;
+
+      margin: 0;
+
+      line-height: 1.8;
+
+      opacity: 0.9;
+    }
+
+    /* ABRIR */
+
+    .clan.ativo .clan-conteudo {
+      max-height: 400px;
+    }
+
+    /* BOTÃO */
+
+    .voltar {
+
+      display: inline-block;
+
+      margin-top: 30px;
+
+      text-decoration: none;
+
+      color: white;
+
+      border:
+      2px solid #c084fc;
+
+      padding: 12px 20px;
+
+      border-radius: 10px;
+
+      transition: 0.3s;
+    }
+
+    .voltar:hover {
+
+      background: #c084fc;
+
+      color: black;
+
+      box-shadow:
+      0 0 20px #c084fc;
+
+      transform: scale(1.05);
+    }
+
+    /* FOOTER */
+
+    footer {
+
+      text-align: center;
+
+      padding: 25px;
+
+      background: #020617;
+
+      margin-top: 50px;
+
+      border-top:
+      1px solid rgba(168,85,247,0.2);
+
+      opacity: 0.8;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>AlitaPédia</h1>
+</header>
+
+<section class="hero">
+
+  <h2>Assombrosos</h2>
+
+  <p>
+    Clãs ligados ao espiritual, ao oculto e às manifestações sobrenaturais.
+  </p>
+
+</section>
+
+<section class="container">
+
+  <!-- NARKOFF -->
+
+  <div class="clan" onclick="abrirClan(this)">
+
+    <div class="clan-topo">
+      <h3>Narkoff</h3>
+      <p>Drogas e maldições</p>
+    </div>
+
+    <div class="clan-conteudo">
+      <p>
+        Os Narkoff manipulam substâncias amaldiçoadas,
+        efeitos alucinógenos e deterioração espiritual progressiva.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- ANAHÍ -->
+
+  <div class="clan" onclick="abrirClan(this)">
+
+    <div class="clan-topo">
+      <h3>Anahí</h3>
+      <p>Espiritualidade ancestral e natureza</p>
+    </div>
+
+    <div class="clan-conteudo">
+      <p>
+        Os Anahí possuem ligação profunda
+        com espíritos ancestrais e forças naturais primitivas.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- YUNABI -->
+
+  <div class="clan" onclick="abrirClan(this)">
+
+    <div class="clan-topo">
+      <h3>Yunabi</h3>
+      <p>Sedução e energia vital</p>
+    </div>
+
+    <div class="clan-conteudo">
+      <p>
+        Os Yunabi manipulam emoções,
+        sedução e drenagem de energia vital através do contato.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- WATANABE -->
+
+  <div class="clan" onclick="abrirClan(this)">
+
+    <div class="clan-topo">
+      <h3>Watanabe</h3>
+      <p>Sombras e teatro sombrio</p>
+    </div>
+
+    <div class="clan-conteudo">
+      <p>
+        Os Watanabe controlam sombras físicas
+        e manifestações ocultas através de projeções sombrias.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- OWUSU -->
+
+  <div class="clan" onclick="abrirClan(this)">
+
+    <div class="clan-topo">
+      <h3>Owusu</h3>
+      <p>Ligamentos espirituais</p>
+    </div>
+
+    <div class="clan-conteudo">
+      <p>
+        Os Owusu criam conexões espirituais
+        entre seres, almas e objetos físicos.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- KOÁGÃ -->
+
+  <div class="clan" onclick="abrirClan(this)">
+
+    <div class="clan-topo">
+      <h3>Koágã</h3>
+      <p>Silenciação espiritual</p>
+    </div>
+
+    <div class="clan-conteudo">
+      <p>
+        Os Koágã impõem ordens diretamente à alma,
+        anulando manifestações de Henki e presença espiritual.
+      </p>
+    </div>
+
+  </div>
+
+  <a href="clas.html" class="voltar">
+    ⬅ Voltar
+  </a>
+
+</section>
+
+<footer>
+  <p>© AlitaPédia — Assombrosos</p>
+</footer>
+
+<script>
+
+  function abrirClan(elemento) {
+    elemento.classList.toggle("ativo");
+  }
+
+</script>
+
+</body>
+</html>

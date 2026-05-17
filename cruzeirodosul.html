@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cruzeiro do Sul</title>
+
+  <style>
+
+    /* BODY */
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+
+      background:
+      radial-gradient(circle at top,
+      #0f172a,
+      #020617 70%);
+
+      color: white;
+    }
+
+    /* HEADER */
+
+    header {
+      background: rgba(2,6,23,0.95);
+      padding: 20px;
+      text-align: center;
+
+      border-bottom:
+      2px solid #38bdf8;
+
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+
+      backdrop-filter: blur(10px);
+    }
+
+    header h1 {
+      margin: 0;
+
+      color: #7dd3fc;
+
+      letter-spacing: 3px;
+
+      text-shadow:
+      0 0 10px #38bdf8,
+      0 0 25px #0ea5e9;
+    }
+
+    /* HERO */
+
+    .hero {
+      text-align: center;
+      padding: 120px 20px;
+
+      background:
+      linear-gradient(
+      rgba(0,0,0,0.6),
+      rgba(0,0,0,0.85)),
+      radial-gradient(circle at center,
+      #0ea5e9,
+      #1e3a8a,
+      #020617);
+
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* ESTRELAS */
+
+    .hero::before {
+
+      content: "";
+
+      position: absolute;
+
+      width: 200%;
+      height: 200%;
+
+      background:
+      radial-gradient(white 1px, transparent 1px);
+
+      background-size: 60px 60px;
+
+      opacity: 0.15;
+
+      animation: estrelas 45s linear infinite;
+    }
+
+    @keyframes estrelas {
+
+      from {
+        transform: translateY(0);
+      }
+
+      to {
+        transform: translateY(250px);
+      }
+
+    }
+
+    .hero h2 {
+      position: relative;
+
+      font-size: 4em;
+
+      margin-bottom: 10px;
+
+      color: #dbeafe;
+
+      text-shadow:
+      0 0 15px #38bdf8,
+      0 0 40px #0ea5e9;
+    }
+
+    .hero p {
+      position: relative;
+
+      font-size: 1.2em;
+
+      opacity: 0.8;
+    }
+
+    /* CONTAINER */
+
+    .container {
+      padding: 50px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    /* CLÃ */
+
+    .clan {
+
+      background:
+      rgba(255,255,255,0.05);
+
+      border:
+      1px solid rgba(56,189,248,0.3);
+
+      margin-bottom: 25px;
+
+      border-radius: 16px;
+
+      overflow: hidden;
+
+      transition: 0.4s;
+
+      cursor: pointer;
+
+      backdrop-filter: blur(8px);
+
+      box-shadow:
+      0 0 15px rgba(14,165,233,0.1);
+    }
+
+    .clan:hover {
+
+      transform:
+      scale(1.02)
+      translateY(-5px);
+
+      box-shadow:
+      0 0 20px rgba(56,189,248,0.3),
+      0 0 50px rgba(14,165,233,0.2);
+
+      border-color: #38bdf8;
+    }
+
+    /* TOPO */
+
+    .clan-topo {
+      padding: 25px;
+    }
+
+    .clan-topo h3 {
+
+      margin: 0;
+
+      color: #7dd3fc;
+
+      font-size: 2em;
+
+      text-shadow:
+      0 0 10px rgba(56,189,248,0.5);
+    }
+
+    .clan-topo p {
+      margin-top: 8px;
+      opacity: 0.7;
+    }
+
+    /* CONTEÚDO */
+
+    .clan-conteudo {
+
+      max-height: 0;
+
+      overflow: hidden;
+
+      transition:
+      max-height 0.5s ease;
+
+      background:
+      rgba(0,0,0,0.25);
+    }
+
+    .clan-conteudo p {
+
+      padding: 25px;
+
+      margin: 0;
+
+      line-height: 1.8;
+
+      opacity: 0.9;
+    }
+
+    /* ABRIR */
+
+    .clan.ativo .clan-conteudo {
+      max-height: 320px;
+    }
+
+    /* BOTÃO */
+
+    .voltar {
+
+      display: inline-block;
+
+      margin-top: 30px;
+
+      text-decoration: none;
+
+      color: white;
+
+      border:
+      2px solid #38bdf8;
+
+      padding: 12px 20px;
+
+      border-radius: 10px;
+
+      transition: 0.3s;
+    }
+
+    .voltar:hover {
+
+      background: #38bdf8;
+
+      color: black;
+
+      box-shadow:
+      0 0 20px #38bdf8;
+
+      transform: scale(1.05);
+    }
+
+    /* FOOTER */
+
+    footer {
+
+      text-align: center;
+
+      padding: 25px;
+
+      background: #020617;
+
+      margin-top: 50px;
+
+      border-top:
+      1px solid rgba(56,189,248,0.2);
+
+      opacity: 0.8;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>AlitaPédia</h1>
+</header>
+
+<section class="hero">
+
+  <h2>O Cruzeiro do Sul</h2>
+
+  <p>
+    Os clãs guiados pelas constelações sagradas.
+  </p>
+
+</section>
+
+<section class="container">
+
+  <!-- CUBDELL -->
+
+  <div class="clan" onclick="abrirClan(this)">
+
+    <div class="clan-topo">
+      <h3>Cubdell</h3>
+      <p>Essência Mágica</p>
+    </div>
+
+    <div class="clan-conteudo">
+      <p>
+        Os Cubdell manipulam essência mágica pura,
+        refinando feitiços e moldando estruturas arcanas
+        complexas. São considerados os alquimistas absolutos
+        da magia.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- MORSANI -->
+
+  <div class="clan" onclick="abrirClan(this)">
+
+    <div class="clan-topo">
+      <h3>Morsani</h3>
+      <p>Marionetes Cadavéricas</p>
+    </div>
+
+    <div class="clan-conteudo">
+      <p>
+        Os Morsani transformam corpos mortos em extensões
+        de sua vontade. Seus exércitos silenciosos obedecem
+        comandos como marionetes sem alma.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- CHÁVEZ -->
+
+  <div class="clan" onclick="abrirClan(this)">
+
+    <div class="clan-topo">
+      <h3>Chávez</h3>
+      <p>Anti-Magia</p>
+    </div>
+
+    <div class="clan-conteudo">
+      <p>
+        Os Chávez conseguem negar, romper e enfraquecer
+        manifestações mágicas. Sua presença é temida por
+        qualquer usuário arcano.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- GEISTWEG -->
+
+  <div class="clan" onclick="abrirClan(this)">
+
+    <div class="clan-topo">
+      <h3>Geistweg</h3>
+      <p>Direções e Setas</p>
+    </div>
+
+    <div class="clan-conteudo">
+      <p>
+        Os Geistweg alteram vetores, trajetórias e sentidos
+        espaciais. Ataques, movimentos e até a gravidade podem
+        ser redirecionados por sua influência.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- ZHÎYÀN -->
+
+  <div class="clan" onclick="abrirClan(this)">
+
+    <div class="clan-topo">
+      <h3>Zhîyàn</h3>
+      <p>Destino e Papel</p>
+    </div>
+
+    <div class="clan-conteudo">
+      <p>
+        Os Zhîyàn manipulam escritos, registros e linhas de
+        destino. Profecias e futuros podem ser alterados
+        através de suas palavras.
+      </p>
+    </div>
+
+  </div>
+
+  <a href="clas.html" class="voltar">
+    ⬅ Voltar
+  </a>
+
+</section>
+
+<footer>
+  <p>© AlitaPédia — Cruzeiro do Sul</p>
+</footer>
+
+<script>
+
+  function abrirClan(elemento) {
+    elemento.classList.toggle("ativo");
+  }
+
+</script>
+
+</body>
+</html>
